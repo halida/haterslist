@@ -1,0 +1,15 @@
+/log
+/tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+/public/system
+/coverage/
+/spec/tmp
+
+config/secrets.yml
+config/database.yml
+
+/.bundle
+/vendor/bundle
+

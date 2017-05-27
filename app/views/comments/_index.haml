@@ -1,0 +1,6 @@
+.comment-list
+  = render partial: "comments/comment", collection: parent.root_comments, as: :comment, locals: {parent: parent}
+
+= render partial: "comments/form", locals: {parent: parent, comment: parent.comment_threads.build}
+
+

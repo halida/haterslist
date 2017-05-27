@@ -1,14 +1,5 @@
 .item
   = @item.description
 
-%ul
-  - @item.comment_threads.each do |comment|
-    %li= comment.body
+= render partial: "comments/index", locals: {parent: @item}
 
-= simple_form_for([@item, @item.comment_threads.build], html: {style: "width: 300px"}) do |f|
-  = f.input_field :body, style: "width: 100%"
-  <br/>
-  = f.submit "Comment", class: 'btn btn-default pull-right btn-xs'
-
-= link_to 'Edit', edit_item_path(@item)
-= link_to 'Back', items_path

@@ -3,9 +3,13 @@ class CommentsController < ApplicationController
   before_action :load_parent
 
   def new
+    @comment = @parent.comment_threads.build(resource_params)
+    render_form
   end
 
   def edit
+    @comment = @parent.comment_threads.find(params[:id])
+    render_form
   end
 
   def create
@@ -14,7 +18,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @parent
     else
-      render :new
+      render_form
     end
   end
 
@@ -23,7 +27,7 @@ class CommentsController < ApplicationController
     if @comment.update(resource_params)
       redirect_to @parent
     else
-      render :edit
+      render_form
     end
   end
 
@@ -44,7 +48,11 @@ class CommentsController < ApplicationController
   end
 
   def resource_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :parent_id)
   end
+
+  def render_form
+    render partial: 'form', layout: nil, locals: {parent: @parent, comment: @comment}
+  end    
 
 end

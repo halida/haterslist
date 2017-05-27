@@ -83,6 +83,8 @@ GEM
     erubi (1.6.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    fancybox2-rails (0.2.7)
+      railties (>= 3.1.0)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
@@ -240,6 +242,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   erubis
+  fancybox2-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mysql2

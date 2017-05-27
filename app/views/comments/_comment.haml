@@ -1,0 +1,8 @@
+.item
+  .body
+    = comment.body
+    = link_to [:new, parent, :comment, {comment: {parent_id: comment.id}}], class: 'fancybox fancybox.ajax', title: "Comment" do
+      %span.glyphicon.glyphicon-comment{style: 'color: #eee'}
+  - if comment.has_children?
+    .item-list{style: 'padding: 0 0 0 20px'}
+      = render partial: "comments/comment", collection: comment.children, as: :comment, locals: {parent: parent}

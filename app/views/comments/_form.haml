@@ -1,0 +1,5 @@
+= simple_form_for([parent, comment], html: {style: "width: 300px"}) do |f|
+  = f.hidden_field :parent_id
+  = f.input_field :body, style: "width: 100%; height: 80px"
+  <br/>
+  = f.submit "Comment", class: 'btn btn-default pull-right btn-xs'

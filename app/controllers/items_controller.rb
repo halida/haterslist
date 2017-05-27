@@ -1,23 +1,19 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource param_method: :resource_params
 
   def index
-    @items = Item.all
   end
 
   def show
   end
 
   def new
-    @item = Item.new
   end
 
   def edit
   end
 
   def create
-    @item = Item.new(item_params)
-
     if @item.save
       redirect_to @item, notice: 'Item was successfully created.'
     else
@@ -26,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
+    if @item.update(resource_params)
       redirect_to @item, notice: 'Item was successfully updated.'
     else
       render :edit
@@ -40,13 +36,7 @@ class ItemsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def item_params
+  def resource_params
     params.require(:item).permit(:description)
   end
 

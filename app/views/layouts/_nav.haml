@@ -1,0 +1,17 @@
+%nav
+  %ul.nav.nav-pills.pull-right
+    %li.active{role: :presentation}
+      = link_to 'Post yours', new_item_path
+    %li{role: :presentation}
+      = link_to 'List', root_path
+    %li{role: :presentation}
+      = link_to 'About', '#'
+
+    - if user_signed_in?
+      %li{role: :presentation}
+        = link_to current_user.name, '#'
+      %li{role: :presentation}
+        = link_to('Logout', destroy_user_session_path, :method => :delete)
+    - else
+      %li{role: :presentation}
+        = link_to 'Login', new_user_session_path

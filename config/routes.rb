@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :items
   resources :comments
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
 end

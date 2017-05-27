@@ -34,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'cancancan'
+
+gem 'rails_admin', '~> 1.1.1'
+gem 'erubis'
 
 
 group :development, :test do

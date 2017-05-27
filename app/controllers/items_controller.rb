@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  load_and_authorize_resource param_method: :resource_params
+  load_resource param_method: :resource_params
 
   def index
   end

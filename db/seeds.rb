@@ -7,5 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 admin = User.create(name: 'admin', email: 'admin@haterslist.org', password: SecureRandom.hex(10))
+guest = User.create(name: 'guest', email: 'guest@haterslist.org', password: SecureRandom.hex(10))
+
+data = [
+  {id: 1, description: "Govenment"},
+  {id: 2, description: "My Mum"},
+  {id: 3, description: "My Boss"},
+]
+Items.create(data)
+
+data = [
+  {}
+]
+Item.find(1).comment_threads << data
+
 
 

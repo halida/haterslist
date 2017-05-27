@@ -16,10 +16,3 @@ data = [
 ]
 Items.create(data)
 
-data = [
-  {}
-]
-Item.find(1).comment_threads << data
-
-
-

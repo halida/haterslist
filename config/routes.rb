@@ -7,6 +7,14 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  
+  namespace :admin do
+    resources :tools do
+      collection do
+        get :memory_leak
+      end
+    end
+  end
+
+  mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
+
 end

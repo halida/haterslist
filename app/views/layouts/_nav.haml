@@ -8,6 +8,10 @@
       = link_to 'About', '#'
 
     - if user_signed_in?
+      - if current_user.admin?
+        %li{role: :presentation}
+          = link_to 'Admin panel', [:admin, :tools]
+      
       %li{role: :presentation}
         = link_to current_user.name, '#'
       %li{role: :presentation}

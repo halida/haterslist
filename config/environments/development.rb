@@ -54,4 +54,8 @@ Rails.application.configure do
 
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Enable the logstasher logs for the current environment
+  config.logstasher.enabled = true
+
 end

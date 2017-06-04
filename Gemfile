@@ -45,6 +45,7 @@ gem 'fancybox2-rails'
 
 gem 'thin'
 
+gem 'logstasher'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
